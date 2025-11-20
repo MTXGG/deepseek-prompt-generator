@@ -1,0 +1,5 @@
+dash
+dash-bootstrap-components
+requests
+gunicorn  # 生产环境使用的 WSGI 服务器
+python-dotenv # (可选，用于本地安全加载环境变量)
