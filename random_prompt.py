@@ -18,7 +18,10 @@ DEEPSEEK_API_BASE = "https://api.deepseek.com/v1/chat/completions"
 DEEPSEEK_MODEL_NAME = "deepseek-chat"
 # ⚠️ 请在这里替换为您的 DeepSeek 密钥，或者使用 os.environ.get()
 # 在生产环境中，强烈建议使用 os.environ.get('DEEPSEEK_API_KEY', 'YOUR_FALLBACK_KEY')
-DEEPSEEK_API_KEY = "sk-ad8fa34bb18d45deb04bc3bcd15bc784" 
+DEEPSEEK_API_KEY = os.environ.get('DEEPSEEK_API_KEY') 
+if not DEEPSEEK_API_KEY:
+    # 如果环境变量未设置，则尝试从本地文件或返回错误
+    print("警告：DEEPSEEK_API_KEY 环境变量未设置！")
 
 DEEPSEEK_HEADERS = {
     'Authorization': f'Bearer {DEEPSEEK_API_KEY}',
